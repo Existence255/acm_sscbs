@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="result">
+            <span id="screen">0</span>
+        </div>
+        <div class="buttons">
+            <button id="square" onclick="sqr()">x²</button>
+            <button id="root" onclick="root()">√x</button>
+            <button id="clear" onclick="clear()">C</button>
+            <button id="delete" onclick="del()">DEL</button>
+            <button id="seven" onclick="insert('7')">7</button>
+            <button id="eight" onclick="insert('8')">8</button>
+            <button id="nine" onclick="insert('9')">9</button>
+            <button id="div" onclick="insert('/')">/</button>
+            <button id="four" onclick="insert('4')">4</button>
+            <button id="five" onclick="insert('5')">5</button>
+            <button id="six" onclick="insert('6')">6</button>
+            <button id="mul" onclick="insert('*')">×</button>
+            <button id="one" onclick="insert('1')">1</button>
+            <button id="two" onclick="insert('2')">2</button>
+            <button id="three" onclick="insert('3')">3</button>
+            <button id="sub" onclick="insert('-')">-</button>
+            <button id="calc" onclick="equal()">=</button>
+            <button id="zero" onclick="insert('0')">0</button>
+            <button id="decimal" onclick="insert('.')">.</button>
+            <button id="add" onclick="insert('+')">+</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
