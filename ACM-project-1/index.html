@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime wallpaper generator </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-[100vh] bg-[#C6E7FF]">
+        <div class="h-[8vh] w-full bg-[#D4F6FF] justify-evenly items-center flex ">
+            <div class="w-full justify-evenly items-center flex flex-wrap">
+                <div class="h-[30px] text-indigo-400">
+                    Anime wallpaper generator
+                </div>
+                <div class="flex gap-4">
+                    <input type="text" id="input"placeholder="Theme" class="p-2 rounded-md border-2 hover:ease-in-out 1s"/>
+                    <button onclick="search()" class="bg-sky-500 hover:bg-sky-700 rounded-lg text-white p-2 w-[100px]">Search</button>
+                    
+                </div>
+                <div class="text-indigo-400">
+                    ACM Member : Dhruv Kumar Singh
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="justify-center items-center px-80 w-full h-full">
+            <div id="photosec"class="grid grid-cols-3 grid-rows-3 gap-4 w-full overflow-y-auto  pt-40 max-h-[92vh] flex-justify-center items-center m-0">
+                <img src="search.png" class="w[20vh] h-auto m-auto " alt="">
+                <img src="search.png" class="w[20vh] h-auto m-auto " alt="">
+                <img src="search.png" class="w[20vh] h-auto m-auto " alt="">
+                <img src="search.png" class="w[20vh] h-auto m-auto " alt="">
+                <img src="search.png" class="w[20vh] h-auto m-auto" alt="">
+                <img src="search.png" class="w[20vh] h-auto m-auto" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        async function search(){
+            const inputData=document.getElementById("input").value
+            const res=await fetch("https://wallpaper.acmsscbs.in/api/search?q="+inputData)
+            const data=await res.json()
+            const main=document.getElementById("photosec")
+            main.innerHTML=''
+            for(let i=0;i<data['wallpaper'].length;i++){
+                var url=(data.wallpaper[i].image)
+                var img=document.createElement("img")
+                img.setAttribute('src',url)
+                img.classlist=['w[20vh] h-auto m-auto']
+                main.appendChild(img)
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
